@@ -1,0 +1,141 @@
+﻿body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(212, 201, 190);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+    body > * {
+        flex-basis: 100%;
+        padding: 1em 2em;
+        box-sizing: border-box;
+    }
+
+#app {
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    color: white;
+    top: 0;
+    background-color: rgb(18, 52, 88);
+    height: 15vh;
+    width: 100vw;
+    border-bottom: 3px solid black;
+}
+
+    header div.container {
+        font-family: "Permanent Marker", cursive;
+        font-size: 4em;
+    }
+
+main {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+}
+
+h1 {
+    font-family: "Permanent Marker", cursive;
+}
+
+footer {
+    min-height: 10vh;
+    background-color: rgb(55, 95, 138);
+    border-top: 2px solid black;
+}
+
+.footer_top,
+.footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_bottom {
+    padding-top: 1em;
+    opacity: 0.6;
+    font-size: 0.7em;
+}
+
+footer p {
+    text-align: center;
+    opacity: 0.5;
+    font-size: 0.7em;
+    margin: 0;
+}
+
+section {
+    margin: 2% 3%;
+    border: 2px solid rgb(18, 52, 88);
+    padding: 2% 5%;
+    border-radius: 10%;
+}
+
+.bigcointainer {
+    flex-basis: 70%;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5%;
+}
+
+.smallcontainer {
+    flex-basis: 30%;
+    text-align: center;
+}
+
+    .smallcontainer p {
+        opacity: 0.5;
+        margin-bottom: 0;
+    }
+
+li {
+    list-style-position: inside;
+}
+
+hr.dashed {
+    border-top: 1px dashed rgb(212, 201, 190);
+}
+
+/*  LIGHT/DARK MODE */
+
+body.light-mode {
+    background-color: rgb(212, 201, 190);
+    color: black;
+}
+
+body.dark-mode {
+    background-color: rgb(28, 28, 28);
+    color: rgb(235, 235, 235);
+}
+
+.dark-mode header {
+    background-color: rgb(10, 20, 40);
+    color: rgb(230, 230, 230);
+    border-bottom: 3px solid rgb(90, 90, 90);
+}
+
+.dark-mode footer {
+    background-color: rgb(20, 40, 60);
+    color: rgb(200, 200, 200);
+    border-top: 2px solid rgb(80, 80, 80);
+}
+
+.dark-mode section {
+    background-color: rgb(40, 40, 40);
+    border-color: rgb(100, 100, 100);
+    color: rgb(230, 230, 230);
+}
+
+.dark-mode hr.dashed {
+    border-top: 1px dashed rgb(80, 80, 80);
+}

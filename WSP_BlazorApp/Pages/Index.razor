@@ -1,0 +1,89 @@
+﻿@page "/"
+<header>
+    <div class="container">
+        <i class="fa-solid fa-fire"></i> Fireshow
+    </div>
+    <div class="personal">
+        <i class="fa-solid fa-user"></i> <b> Mateusz Serowik</b>, (album: 122680) 
+        <button @onclick="ToggleDarkMode" style="margin-bottom: 1rem;">
+            @(isDarkMode ? "🌙" : "☀️")
+        </button>
+    </div>
+</header>
+<main>
+    <section class="bigcointainer">
+        <h1><i class="fa-solid fa-star"></i> Co zawiera fireshow?</h1>
+        <p>Podczas pokazu artyści wykorzystują różne narzędzia ogniowe, takie jak:</p>
+        <ul>
+            <li>poi – kule na łańcuchach obracane wokół ciała</li>
+            <li>kije ogniowe (staff) – obracane wokół osi, często w stylu bojowym</li>
+            <li>wachlarze ogniowe – eleganckie i taneczne rekwizyty</li>
+            <li>pochodnie, liny, linki, laski i inne autorskie wynalazki</li>
+            <li>czasem również płonące kostiumy lub efekty pirotechniczne</li>
+        </ul>
+
+        <h1><i class="fa-solid fa-masks-theater"></i> Klimat i muzyka</h1>
+        <p>Fireshow to nie tylko ogień – ważną rolę odgrywa muzyka, choreografia i atmosfera. Artyści często tworzą całe sceniczne opowieści, łącząc ruch z symboliką żywiołu ognia.</p>
+
+        <h1><i class="fa-solid fa-fire-extinguisher"></i> Czy to bezpieczne?</h1>
+        <p>Tak – pod warunkiem, że pokaz przygotowują profesjonaliści:</p>
+        <ul>
+            <li>używają specjalnych środków palnych (np. nafty oczyszczonej)</li>
+            <li>dbają o bezpieczeństwo widzów i artystów</li>
+            <li>mają odpowiednie ubezpieczenia i pozwolenia</li>
+        </ul>
+
+        <h1><i class="fa-solid fa-binoculars"></i> Gdzie można zobaczyć fireshow?</h1>
+        <p>Fireshow często pojawia się na:</p>
+        <ul>
+            <li>festiwalach ulicznych i plenerowych,</li>
+            <li>imprezach integracyjnych i firmowych,</li>
+            <li>weselach i urodzinach,</li>
+            <li>pokazach tematycznych (np. fantasy, średniowiecznych, słowiańskich)</li>
+        </ul>
+    </section>
+
+    <section class="smallcontainer">
+        <a href="https://www.youtube.com/watch?v=xofup-0NhFs" target="_blank">
+            <img src="images/me.jpg" alt="Fireshow" />
+        </a>
+        <p>Warmiński Festiwal Światła i Ognia</p>
+        <p style="color: red; font-size: 0.5em;">
+            *kliknij w zdjęcie aby obejrzeć film promocyjny w serwisie YouTube
+        </p>
+    </section>
+</main>
+
+<footer>
+    <div class="footer_top">
+        <div class="footer_left">
+            <i class="fa-solid fa-graduation-cap"></i> Przykładowa strona
+        </div>
+        <div class="footer_right">
+            <i class="fa-solid fa-code"></i> Stack technologiczny
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="footer_left">
+            Szablon strony internetowej zrealizowanej na potrzeby zajęć z przedmiotu "Wybrane Środowiska Programowania" w ramach studiów na kierunku Informatyka w Społecznej Akademii Nauk w Łodzi.
+        </div>
+        <div class="footer_right">
+            Wykorzystano: HTML + CSS
+        </div>
+    </div>
+    <hr class="dashed" />
+    <p>Projekt i realizacja: Mateusz Serowik © 2025 Społeczna Akademia Nauk w Łodzi</p>
+</footer>
+
+@code {
+    private bool isDarkMode = false;
+
+    [Inject] private IJSRuntime JS { get; set; }
+
+    private async Task ToggleDarkMode()
+    {
+        isDarkMode = !isDarkMode;
+        var mode = isDarkMode ? "dark-mode" : "light-mode";
+        await JS.InvokeVoidAsync("setBodyClass", mode);
+    }
+}

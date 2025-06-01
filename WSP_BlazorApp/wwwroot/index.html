@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fireshow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <script>
+        window.setBodyClass = function (mode) {
+            document.body.classList.remove("dark-mode", "light-mode");
+            document.body.classList.add(mode);
+        };
+    </script>
+</head>
+<body>
+    <div id="app"> 
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+</html>
